@@ -1,6 +1,6 @@
 <?php
-include "listMoviesPage.php";
-$sql=mysqli_query($listMoviesPage,"select * from movies where id='$_GET[id]'");
+include '../component/sidebar.php';
+$sql=mysqli_query($con,"select * from movies where id='$_GET[id]'");
 $data=mysqli_fetch_array($sql);
 ?>
 
@@ -23,12 +23,19 @@ solid #D40013; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 
         <td> Genre </td>
         <td> <input type="text" name="genre" value="<?php echo $data['genre']; ?>"> </td>
     </tr>
+    <tr>
 <td> Realese </td>
         <td> <input type="text" name="realese" value="<?php echo $data['realese']; ?>"> </td>
     </tr>
+    <tr>
+<td> Episode </td>
+        <td> <input type="text" name="episode" value="<?php echo $data['episode']; ?>"> </td>
+    </tr>
+    <tr>
 <td> Season </td>
         <td> <input type="text" name="season" value="<?php echo $data['season']; ?>"> </td>
     </tr>
+    <tr>
 <td> Synopsis </td>
         <td> <input type="text" name="synopsis" value="<?php echo $data['synopsis']; ?>"> </td>
     </tr>
@@ -41,7 +48,7 @@ solid #D40013; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 
 </form>
 
 <?php
-include "listMoviesPage.php";
+include '../component/sidebar.php';
 
 if(isset($_POST['proses'])){
 mysqli_query($koneksi, "update movies set  

@@ -18,8 +18,9 @@ solid #D40013; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 
 <th scope="col">Genre</th>
 <th scope="col">Realese</th>
 <th scope="col">Season</th>
+<th scope="col">Episode</th>
 <th scope="col">Synopsis</th>
-<th scope="col">Edit / Delete</th>
+<th scope="col"></th>
 </tr>
 </thead>
 <tbody>
@@ -36,10 +37,13 @@ echo'
 <td>'.$data['name'].'</td>
 <td>'.$data['genre'].'</td>
 <td>'.$data['realese'].'</td>
+<td>'.$data['episode'].'</td>
 <td>'.$data['season'].'</td>
 <td>'.$data['synopsis'].'</td>
 <td>
-<a href="../process/editMovieProcess.php?id='.$data['id'].'"onClick="return confirm"> 
+<a href="../process/addMovieProcess.php?id='.$data['id'].'"onClick="return confirm ( \'Are you sure want to create list movie?\')"> 
+<i style="font-size:28px;color:green" class="fa fa-plus"></i>
+<a href="../process/editMovieProcess.php?id='.$data['id'].'"onClick="return confirm ( \'Are you sure want to edit this data?\')"> 
 <i style="font-size:28px;color:orange" class="fa fa-pencil"></i>
 <a href="../process/deleteMovieProcess.php?id='.$data['id'].'"onClick="return confirm ( \'Are you sure want to delete this data?\')"> 
 <i style="color: red" class="fa fa-trash fa-2x"></i>
